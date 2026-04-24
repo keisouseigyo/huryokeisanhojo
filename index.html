@@ -360,21 +360,26 @@
             for (let colIndex = 0; colIndex < 5; colIndex++) {
                 const cellId = `cell${rowIndex + 1}${colIndex + 1}`; // 例: cell11, cell12, ...
                 const cell = document.getElementById(cellId);
+        
                 if (colIndex === 0) {
                     work7 = Math.sqrt(rowIndex / 4) * 100; // 風量（%）
-                    cell.innerText = work7.toFixed(1);
+                    cell.innerText = (Math.ceil(work7 * 10) / 10).toFixed(1);
+        
                 } else if (colIndex === 1) {
                     work8 = Math.sqrt(work6 ** 2 * rowIndex / 4); // 風量（m³/min）
-                    cell.innerText = work8.toFixed(1);
+                    cell.innerText = (Math.ceil(work8 * 10) / 10).toFixed(1);
+        
                 } else if (colIndex === 2) {
                     work9 = work8 / 60 / work1; // 風速 (m/s)
-                    cell.innerText = work9.toFixed(1);
+                    cell.innerText = (Math.ceil(work9 * 10) / 10).toFixed(1);
+        
                 } else if (colIndex === 3) {
                     work10 = (4 + 4 * rowIndex); // 電流 (4-20mA)
-                    cell.innerText = work10.toFixed(3);
+                    cell.innerText = (Math.ceil(work10 * 10) / 10).toFixed(1);
+        
                 } else if (colIndex === 4) {
                     work11 = (work5 / 4 * rowIndex); // 動圧 (Pa)
-                    cell.innerText = work11.toFixed(1);
+                    cell.innerText = (Math.ceil(work11 * 10) / 10).toFixed(1);
                 }
             }
         }
