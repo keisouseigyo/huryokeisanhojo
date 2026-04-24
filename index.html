@@ -375,7 +375,7 @@
         
                 } else if (colIndex === 3) {
                     work10 = (4 + 4 * rowIndex); // 電流 (4-20mA)
-                    cell.innerText = (Math.ceil(work10 * 10) / 10).toFixed(1);
+                    cell.innerText = (Math.ceil(work10 * 10) / 10).toFixed(3);
         
                 } else if (colIndex === 4) {
                     work11 = (work5 / 4 * rowIndex); // 動圧 (Pa)
